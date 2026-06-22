@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+
+# Node / frontend
+node_modules/
+dist/
+*.local
+
+# App data (images, db, uploads) and secrets
+data/
+.env
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+
+# TS build info
+*.tsbuildinfo
