@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Generator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <header class="app__header">
+      <h1 class="app__title">Image Generator</h1>
+      <p class="app__subtitle">Type a prompt and generate unique, downloadable art. Same prompt &rarr; same image.</p>
+    </header>
+
+    <form class="controls" id="controls">
+      <label class="controls__field controls__field--wide">
+        <span class="controls__label">Prompt</span>
+        <input type="text" id="prompt" class="controls__input" placeholder="e.g. calm ocean sunset" value="calm ocean sunset" autocomplete="off">
+      </label>
+
+      <label class="controls__field">
+        <span class="controls__label">Style</span>
+        <select id="style" class="controls__input">
+          <option value="waves">Waves</option>
+          <option value="mosaic">Mosaic</option>
+          <option value="bubbles">Bubbles</option>
+          <option value="rays">Rays</option>
+          <option value="grid">Grid</option>
+        </select>
+      </label>
+
+      <label class="controls__field">
+        <span class="controls__label">Palette</span>
+        <select id="palette" class="controls__input">
+          <option value="auto">Auto (from prompt)</option>
+          <option value="sunset">Sunset</option>
+          <option value="ocean">Ocean</option>
+          <option value="forest">Forest</option>
+          <option value="neon">Neon</option>
+          <option value="mono">Monochrome</option>
+        </select>
+      </label>
+
+      <label class="controls__field">
+        <span class="controls__label">Detail</span>
+        <input type="range" id="detail" class="controls__range" min="3" max="40" value="16">
+      </label>
+
+      <div class="controls__actions">
+        <button type="submit" class="btn btn--primary" id="generate">Generate</button>
+        <button type="button" class="btn" id="randomize">Randomize</button>
+        <button type="button" class="btn" id="download">Download PNG</button>
+      </div>
+    </form>
+
+    <div class="canvas-wrap">
+      <canvas id="canvas" width="768" height="768" class="canvas"></canvas>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
