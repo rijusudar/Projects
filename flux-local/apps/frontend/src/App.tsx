@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { api } from "./api/client";
 import { Lightbox } from "./components/Lightbox";
+import { BatchPanel } from "./features/batch/BatchPanel";
 import { EditPanel } from "./features/edit/EditPanel";
 import { GeneratePanel } from "./features/generate/GeneratePanel";
 import { Gallery } from "./features/history/Gallery";
@@ -9,6 +10,7 @@ import { useUiStore, type Tab } from "./stores/useUiStore";
 const TABS: { id: Tab; label: string }[] = [
   { id: "generate", label: "Generate" },
   { id: "edit", label: "Edit" },
+  { id: "batch", label: "Batch" },
   { id: "history", label: "History" },
 ];
 
@@ -66,6 +68,7 @@ export default function App() {
       <main className="flex-1">
         {tab === "generate" && <GeneratePanel />}
         {tab === "edit" && <EditPanel />}
+        {tab === "batch" && <BatchPanel />}
         {tab === "history" && <Gallery />}
       </main>
 

@@ -1,6 +1,6 @@
 import { create } from "zustand";
 
-export type Tab = "generate" | "edit" | "history";
+export type Tab = "generate" | "edit" | "batch" | "history";
 
 interface UiState {
   tab: Tab;

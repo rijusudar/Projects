@@ -10,7 +10,7 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from .api.routes import edit, generate, health, history, images, jobs
+from .api.routes import batch, edit, generate, health, history, images, jobs
 from .api import ws
 from .core.config import get_settings
 from .core.logging import get_logger
@@ -60,6 +60,7 @@ app.include_router(edit.router, prefix=API)
 app.include_router(jobs.router, prefix=API)
 app.include_router(history.router, prefix=API)
 app.include_router(images.router, prefix=API)
+app.include_router(batch.router, prefix=API)
 app.include_router(ws.router, prefix=API)
 
 

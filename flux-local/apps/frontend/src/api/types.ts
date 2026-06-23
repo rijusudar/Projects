@@ -78,6 +78,18 @@ export interface HealthInfo {
   queue_backend: string;
 }
 
+export interface BatchRef {
+  job_ids: string[];
+  count: number;
+}
+
+export interface BatchStatus {
+  jobs: JobDetail[];
+  done: number;
+  total: number;
+  all_succeeded: boolean;
+}
+
 // WebSocket progress events.
 export interface ProgressMessage {
   job_id?: string;

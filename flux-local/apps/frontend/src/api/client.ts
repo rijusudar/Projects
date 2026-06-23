@@ -1,4 +1,6 @@
 import type {
+  BatchRef,
+  BatchStatus,
   GenerateBody,
   HealthInfo,
   HistoryPage,
@@ -49,6 +51,18 @@ export const api = {
 
   history: (limit = 60, offset = 0) =>
     jsonFetch<HistoryPage>(`/history?limit=${limit}&offset=${offset}`),
+
+  batchEdit: (form: FormData) =>
+    fetch(`${BASE}/batch/edit`, { method: "POST", body: form }).then(async (res) => {
+      if (!res.ok) {
+        const d = await res.json().catch(() => ({}));
+        throw new Error(`${res.status}: ${d.detail ?? res.statusText}`);
+      }
+      return res.json() as Promise<BatchRef>;
+    }),
+
+  batchStatus: (jobIds: string[]) =>
+    jsonFetch<BatchStatus>(`/batch/status?job_ids=${jobIds.join(",")}`),
 
   deleteImage: (id: string) =>
     fetch(`${BASE}/images/${id}`, { method: "DELETE" }).then((r) => {
