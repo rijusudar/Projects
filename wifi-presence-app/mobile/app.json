@@ -1,0 +1,29 @@
+{
+  "expo": {
+    "name": "WiFi Presence",
+    "slug": "wifi-presence",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "dark",
+    "scheme": "wifipresence",
+    "splash": {
+      "backgroundColor": "#0A0E14"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.example.wifipresence",
+      "infoPlist": {
+        "NSLocalNetworkUsageDescription": "This app connects to your local WiFi-sensing gateway on your home network."
+      }
+    },
+    "android": {
+      "package": "com.example.wifipresence",
+      "adaptiveIcon": {
+        "backgroundColor": "#0A0E14"
+      },
+      "permissions": ["INTERNET", "ACCESS_NETWORK_STATE"]
+    },
+    "plugins": ["expo-notifications"]
+  }
+}
